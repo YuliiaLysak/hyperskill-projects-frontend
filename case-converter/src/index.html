@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="title">Case Converter</div>
@@ -14,38 +15,8 @@
 <button id="proper-case" onclick="toProperCase()">Proper Case</button>
 <button id="sentence-case" onclick="toSentenceCase()">Sentence Case</button>
 
-<script>
-    function toUpperCase() {
-        let text = document.querySelector("textarea").value;
-        document.querySelector("textarea").value = text.toUpperCase();
-    }
+<button id="save-text-file" onclick="downloadText()">Save Text File</button>
 
-    function toLowerCase() {
-        let text = document.querySelector("textarea").value;
-        document.querySelector("textarea").value = text.toLowerCase();
-    }
-
-    function toProperCase() {
-        let text = document.querySelector("textarea").value;
-        let words = text.toLowerCase().split(' ');
-
-        for (let i = 0; i < words.length; i++) {
-            words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1);
-        }
-
-        document.querySelector("textarea").value = words.join(' ');
-    }
-
-    function toSentenceCase() {
-        let text = document.querySelector("textarea").value;
-        const words = text.toLowerCase().split('. ');
-
-        for (let i = 0; i < words.length; i++) {
-            words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1);
-        }
-
-        document.querySelector("textarea").value = words.join('. ');
-    }
-</script>
+<script src="main.js"></script>
 </body>
 </html>
